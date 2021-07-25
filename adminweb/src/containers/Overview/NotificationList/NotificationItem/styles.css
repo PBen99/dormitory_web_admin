@@ -1,0 +1,25 @@
+.notification-item-box {
+  background-color: rgb(255, 224, 229);
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 8px;
+}
+.notification-item-box__title {
+  padding: 4px 0 4px 20px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.notification-item-box__content {
+  padding: 4px 0 6px 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.notification-item-box__footer {
+  text-align: end;
+  padding: 0 6px 6px 0%;
+  font-size: 16px;
+}
+.notification-item-box__footer span {
+  font-weight: 700 !important;
+}

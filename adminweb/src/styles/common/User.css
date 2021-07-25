@@ -1,0 +1,78 @@
+.style-userInfor {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  cursor: pointer;
+  min-width: 230px;
+  vertical-align: middle;
+  color: aliceblue;
+  background-color: transparent;
+  overflow: hidden;
+  background-color: #5d4954;
+}
+.style-avatarContainer {
+  display: inline-block;
+  border-radius: 5px;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  background-color: #7b8191;
+}
+.infor-box {
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.icon-custome {
+  display: inline-block;
+  color: #fff;
+  padding: 10px 20px 5px 0;
+}
+.style-nameUser {
+  display: block;
+  font-weight: 700;
+}
+.style-roleUser {
+  padding-top: 5px;
+  font-size: 12px;
+  color: #7b8191;
+}
+.style-dropdownContainer {
+  z-index: 1000;
+  position: absolute;
+  top: 80px;
+  right: 48px;
+  border-radius: 10px;
+  padding: 16px 25px;
+  background-color: #5d4954;
+  color: aliceblue;
+  cursor: pointer;
+}
+.style-dropdownItem {
+  padding: 8px;
+  font-weight: 700;
+}
+.style-dropdownItem i {
+  vertical-align: middle;
+  padding-right: 16px;
+  font-size: 20px;
+}
+.style-dropdownItem:not(:last-child) {
+  border-bottom: 2px solid #5b617c;
+}
+.style-dropdownContainer::after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  transform: translateY(-100%);
+  border: 15px solid transparent;
+  border-bottom-color: #5d4954;
+}
+.style-dropdownItem span:hover {
+  color: #5e5ce6;
+}

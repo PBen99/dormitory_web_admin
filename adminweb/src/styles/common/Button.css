@@ -1,0 +1,51 @@
+.btn-custom {
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  height: 40px;
+  padding: 7px 32px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+  min-width: 120px;
+}
+.style-small {
+  height: 30px;
+  font-size: 12px;
+  min-width: 80px;
+}
+.btn-custom:hover {
+  border: 2px solid #d6d5f8;
+}
+.btn-bg-blue {
+  background-image: linear-gradient(90deg, #5b70f6, #8658f3 50%, #5b70f6);
+  background-size: 200%;
+}
+.btn-bg-yellow {
+  background-image: linear-gradient(90deg, #f8b02e, #f08a41);
+  background-size: 200%;
+}
+.btn-bg-red {
+  background-image: linear-gradient(90deg, #f86e2e, #f04141);
+  background-size: 200%;
+}
+.btn-ubg {
+  border: 2px solid #5b70f6;
+  background-color: #fff;
+  color: #000;
+}
+.btn-bg-green {
+  background-image: linear-gradient(90deg, #22767c, #22767c);
+  background-size: 200%;
+}
+.disable_button:disabled,
+.disable_button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  background-image: none;
+  cursor: not-allowed;
+  color: #666666;
+}

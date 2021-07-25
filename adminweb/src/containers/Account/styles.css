@@ -1,0 +1,16 @@
+.account-header {
+  display: flex;
+  justify-content: space-around;
+}
+.label {
+  font-size: 24px;
+  font-weight: 700;
+  width: 100%;
+  margin: 0 0 0 2%;
+}
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}

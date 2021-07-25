@@ -1,0 +1,22 @@
+#contract {
+  font-size: 20px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  border: 3px solid #ddd;
+  width: fit-content;
+}
+#contract th:not(:first-child) {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-weight: 100;
+  text-align: start;
+  padding-left: 50px;
+  width: 500px;
+}
+#contract th:first-child {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: start;
+  padding-left: 40px;
+  width: 200px;
+}

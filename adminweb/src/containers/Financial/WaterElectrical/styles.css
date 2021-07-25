@@ -1,0 +1,42 @@
+.odd {
+  background-color: #f1f8ff !important;
+}
+.even {
+  background-color: #ffffff !important;
+}
+.ag-row-hover {
+  /* putting in !important so it overrides the theme's styling as it hovers the row also */
+  background-color: #ddd !important;
+}
+.grid {
+  height: 600px;
+  width: 700px;
+}
+.ag-header-row:first-child {
+  background-color: #5d4954;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  align-items: center;
+  padding-left: 20px;
+}
+.ag-header-cell-label {
+  justify-content: center;
+}
+.Box-component:hover {
+  background-color: rgba(189, 189, 189, 0.2);
+}
+.water-title {
+  font-weight: 700 !important;
+  font-size: 24px !important;
+}
+.week-select {
+  margin-top: 10px;
+  font-size: 16px;
+  width: 150px;
+}
+.ag-header-cell-label {
+  /* Necessary to allow for text to grow vertically */
+  height: 100%;
+  font-size: 15px;
+}

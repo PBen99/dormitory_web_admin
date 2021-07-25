@@ -1,0 +1,25 @@
+.style-pagination-container {
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+.style-pagination-container button {
+  cursor: pointer;
+  border: 1px solid #fe6276;
+  border-radius: 3px;
+}
+.style-pagination-container button:disabled {
+  opacity: 0.5;
+}
+.style-current-page {
+  display: inline;
+  border-radius: 3px;
+  margin: 0 8px;
+  padding: 4px 16px;
+}
+.field-curent-page {
+  outline: none;
+  border: none;
+}
+.field-curent-page:focus {
+  border: none;
+}

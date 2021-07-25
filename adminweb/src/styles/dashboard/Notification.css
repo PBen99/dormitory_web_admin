@@ -1,0 +1,11 @@
+.style-notificationBox {
+  border-radius: 10px;
+  border: 0 solid #333;
+  margin-bottom: 15px;
+  margin-bottom: 15px;
+  padding: 20px;
+  background-color: #e5e5e5;
+}
+.style-notificationBox:hover {
+  background-color: #64cbd2;
+}

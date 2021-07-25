@@ -1,0 +1,24 @@
+.style-dashboardContainer {
+  height: 100vh;
+  padding: 20px;
+  background: url('../../assets/images/backgrounds/background.jpg') center/cover
+    no-repeat;
+}
+.style-summaryFiguresContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 50%;
+}
+.notificationsContainer {
+  background-color: #fff;
+}
+.notificationsContainer i {
+  margin: 10px;
+  font-size: 20px;
+}
+.style-notiTitle {
+  margin: 15px;
+  font-size: 20px;
+  font-weight: 700;
+}

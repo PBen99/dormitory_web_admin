@@ -1,0 +1,9 @@
+.style-tr-hightlight:hover {
+  cursor: pointer;
+}
+.style-tr-hightlight:nth-child(even) {
+  background-color: #e5e5e5;
+}
+tr {
+  border-bottom: 1px solid #d9d9d9;
+}

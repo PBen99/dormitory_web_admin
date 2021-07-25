@@ -1,0 +1,17 @@
+.tab_component {
+  display: flex;
+  width: auto;
+}
+.style-activeNavSublink {
+  background-color: blueviolet;
+  color: aliceblue;
+  opacity: 0.6;
+}
+.style-navSubLink {
+  border-radius: 5px;
+  padding: 5px;
+  width: 150px;
+}
+.style-financial-container {
+  display: contents;
+}

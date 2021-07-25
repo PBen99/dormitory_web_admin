@@ -1,0 +1,44 @@
+.login-container {
+  height: 100vh;
+  background: url("../../assets/images/backgrounds/admin_background.jpg")
+    center/cover no-repeat;
+  padding-top: 64px;
+}
+.form-login {
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: rgba(71, 71, 71, 0.2) 0px 0px 20px;
+  width: 500px;
+  background-color: white;
+  text-align: center;
+  padding: 32px;
+  border-radius: 5px;
+}
+form {
+  max-width: 300px;
+  margin: auto;
+}
+.title-login {
+  text-transform: uppercase;
+  text-shadow: 0px 1px, 1px 0px, 1px 1px;
+  letter-spacing: 2px;
+  color: #535353;
+  margin-bottom: 32px;
+}
+.content-login {
+  font-size: 16px;
+  color: #535353;
+  margin-bottom: 16px;
+}
+
+.forgot-pass-link {
+  text-align: right;
+  margin-bottom: 32px;
+}
+.forgot-pass-link a {
+  width: 100%;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-shadow: 0px 1px, 1px 0px, 1px 1px;
+  color: #5f6ff6;
+}

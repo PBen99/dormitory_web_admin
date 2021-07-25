@@ -1,0 +1,16 @@
+.form-control {
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  border: none;
+  outline: none;
+  background-color: #efefef;
+}
+.form-control:focus {
+  border: 2px solid #d6d5f8;
+}
+.input-error {
+  border-color: red;
+  box-shadow: rgba(255, 24, 24, 1) 0px 0px 10px;
+}

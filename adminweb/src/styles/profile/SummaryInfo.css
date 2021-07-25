@@ -1,0 +1,19 @@
+.style-profile-name {
+  font-size: 24px !important;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.style-summaryinfo {
+  position: relative;
+  color: #535353;
+  font-size: 18px;
+}
+.style-summaryinfo i {
+  padding-left: 8px;
+  padding-right: 16px;
+}
+.style-profile-changepass-btn {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}

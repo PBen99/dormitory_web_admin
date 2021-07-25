@@ -1,0 +1,35 @@
+.style-areaBox {
+  margin-bottom: 15px;
+  background-color: #fff;
+  color: #333;
+}
+.style-areaBox > p {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.style-roomOfArea {
+  background-color: #e5d8c4;
+  color: #000;
+  min-height: 150px ;
+}
+.style-roomOfArea:hover {
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+.style-student {
+  margin: 5px;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+}
+.style-separation-border:not(:last-child) {
+  border-right: 2px solid #5b617c;
+}
+.style-sm-tag i:hover {
+  color: #e5e5e5;
+}
+.style-room-registration {
+  position: absolute;
+  right: 48px;
+  bottom: 48px;
+}

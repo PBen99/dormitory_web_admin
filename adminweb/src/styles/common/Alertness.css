@@ -1,0 +1,15 @@
+.style-alertness-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+.icon-success {
+  border: 2px solid #82ce34;
+}
+.icon-error {
+  border: 2px solid #e15b69;
+}
+
+.icon-warning {
+  border: 2px solid orange;
+}
