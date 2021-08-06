@@ -14,8 +14,8 @@ import Profile from "./containers/profile/Profile";
 import Budget from "../src/containers/Financial/Budget";
 import Contract from "../src/containers/Financial/Contract";
 import WaterElectrical from "./containers/Financial/WaterElectrical";
-import Student from "./containers/ManageUser/Student";
-import Employee from "./containers/ManageUser/Employee";
+import Rooms from "./containers/ManageUser/Rooms";
+import Schedule from "./containers/ManageUser/Schedule";
 import Registration from "./containers/ManageUser/Registration";
 import ForgotPassword from "./containers/ForgotPassword";
 import ResetPassword from "./containers/ResetPassword";
@@ -86,18 +86,16 @@ function App() {
           exact
         />
         <Route path={ROUTER.ROUTE_MANAGE_USER} exact>
-          <Redirect
-            to={`${ROUTER.ROUTE_MANAGE_USER}${ROUTER.ROUTE_STUDENTS}`}
-          />
+          <Redirect to={`${ROUTER.ROUTE_MANAGE_USER}${ROUTER.ROUTER_ROOMS}`} />
         </Route>
         <Route
-          path={`${ROUTER.ROUTE_MANAGE_USER}${ROUTER.ROUTE_STUDENTS}`}
-          component={withAuth(ManageUser(Student))}
+          path={`${ROUTER.ROUTE_MANAGE_USER}${ROUTER.ROUTER_ROOMS}`}
+          component={withAuth(ManageUser(Rooms))}
           exact
         />
         <Route
-          path={`${ROUTER.ROUTE_MANAGE_USER}${ROUTER.ROUTE_EMPLOYEES}`}
-          component={withAuth(ManageUser(Employee))}
+          path={`${ROUTER.ROUTE_MANAGE_USER}${ROUTER.ROUTER_SCHEDULE}`}
+          component={withAuth(ManageUser(Schedule))}
           exact
         />
         <Route

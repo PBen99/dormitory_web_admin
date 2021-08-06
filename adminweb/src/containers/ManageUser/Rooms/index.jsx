@@ -276,7 +276,6 @@ export default function Student() {
             onOk={handleDeletePeople}
             onCancel={() => setIsYesNoModalVisible(false)}
           />
-          ;
         </div>
       )}
     </div>

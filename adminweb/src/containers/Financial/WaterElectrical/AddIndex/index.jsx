@@ -142,7 +142,7 @@ export default function AddIndex(props) {
             </Box>
             <Box marginBottom={3}>
               <TextField
-                name="new_index_electrical"
+                name="new_index_eclectrical"
                 label="Số điện mới"
                 InputProps={{
                   inputProps: {

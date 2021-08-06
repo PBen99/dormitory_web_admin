@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import MUIDataTable from "mui-datatables";
 import Box from "@material-ui/core/Box";
-import { useSelector } from "react-redux";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import Button from "../../components/common/Button";
 import React, { useState, useEffect } from "react";
@@ -10,7 +9,6 @@ import MoreButton from "./MoreButton";
 import Alertness from "../../components/common/Alertness";
 import * as APIALERTMESSAGE from "../../utilities/constants/APIAlertMessage";
 import * as ALERTMESSAGE from "../../utilities/constants/AlertMessage";
-import Loader from "../../components/common/Loader";
 import Permissionless from "../../components/common/Permissionless";
 
 import {
@@ -34,8 +32,6 @@ export default function Account() {
     list: null,
     totals: null,
   });
-
-  const loader = useSelector((state) => state.account.loading);
 
   const [isUpdate, setUpdate] = useState();
 
@@ -324,8 +320,8 @@ export default function Account() {
 
   const handleTriggerAction = (tableState) => {
     let keyword = "";
-    if (tableState.sesearchText !== "") {
-      keyword = tableState.sesearchText;
+    if (tableState.searchText !== "") {
+      keyword = tableState.searchText;
     }
     setFilter({ ...filter, page: tableState.page + 1, keyword: keyword });
   };
@@ -368,10 +364,6 @@ export default function Account() {
       {!isAllowed("admin_group", "view_user") ? (
         <div className="align-item-ct">
           <Permissionless />
-        </div>
-      ) : loader ? (
-        <div className="align-item-ct">
-          <Loader />
         </div>
       ) : (
         <div>

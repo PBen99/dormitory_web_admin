@@ -10,22 +10,22 @@ const ManageUser = (Component) => (props) => {
         <div className="col col-full pl-16 pr-16 mb-16">
           <div className="mr-16" style={{ display: "inline", width: "200px" }}>
             <NavLink
-              to={`${ROUTER.ROUTE_MANAGE_USER}${ROUTER.ROUTE_STUDENTS}`}
+              to={`${ROUTER.ROUTE_MANAGE_USER}${ROUTER.ROUTER_ROOMS}`}
               style={{ textDecoration: "none" }}
               activeClassName="style-activeNavSublink"
               className="style-navSubLink bold-text"
             >
-              Sinh viên
+              Phòng ở
             </NavLink>
           </div>
           <div className="mr-16" style={{ display: "inline", width: "200px" }}>
             <NavLink
-              to={`${ROUTER.ROUTE_MANAGE_USER}${ROUTER.ROUTE_EMPLOYEES}`}
+              to={`${ROUTER.ROUTE_MANAGE_USER}${ROUTER.ROUTER_SCHEDULE}`}
               style={{ textDecoration: "none" }}
               activeClassName="style-activeNavSublink"
               className="style-navSubLink bold-text"
             >
-              <span>Nhân viên</span>
+              <span>Xếp lịch</span>
             </NavLink>
           </div>
           <div className="mr-16" style={{ display: "inline", width: "200px" }}>

@@ -152,7 +152,7 @@ export default function WaterElectrical() {
     {
       headerName: "Phòng",
       field: "room",
-      filter: "agNumberColumnFilter",
+      filter: "agTextColumnFilter",
       cellStyle: {
         with: "20px",
         fontSize: "14px",
@@ -162,7 +162,7 @@ export default function WaterElectrical() {
     {
       headerName: "Số nước cũ",
       field: "old_index_water",
-      filter: "agTextColumnFilter",
+      filter: "agNumberColumnFilter",
       cellStyle: {
         fontSize: "14px",
         textAlign: "center",
@@ -171,7 +171,7 @@ export default function WaterElectrical() {
     {
       headerName: "Số nước mới",
       field: "new_index_water",
-      filter: "agTextColumnFilter",
+      filter: "agNumberColumnFilter",
       cellStyle: {
         fontSize: "14px",
         textAlign: "center",
@@ -180,7 +180,7 @@ export default function WaterElectrical() {
     {
       headerName: "Số điện cũ",
       field: "old_index_electrical",
-      filter: "agTextColumnFilter",
+      filter: "agNumberColumnFilter",
       cellStyle: {
         fontSize: "14px",
         textAlign: "center",
@@ -189,7 +189,7 @@ export default function WaterElectrical() {
     {
       headerName: "Số điện mới",
       field: "new_index_electrical",
-      filter: "agTextColumnFilter",
+      filter: "agNumberColumnFilter",
       cellStyle: {
         fontSize: "14px",
         textAlign: "center",
@@ -207,7 +207,7 @@ export default function WaterElectrical() {
     {
       headerName: "Giá nước(VND)",
       field: "water_price",
-      filter: "agTextColumnFilter",
+      filter: "agNumberColumnFilter",
       cellStyle: {
         fontSize: "14px",
         textAlign: "center",
@@ -216,7 +216,7 @@ export default function WaterElectrical() {
     {
       headerName: "Giá điện(VND)",
       field: "electrical_price",
-      filter: "agTextColumnFilter",
+      filter: "agNumberColumnFilter",
       cellStyle: {
         fontSize: "14px",
         textAlign: "center",
