@@ -110,7 +110,8 @@ export default function NotificationList() {
     setFilter({ ...filter, page: newPage });
   }
 
-  function handleDelete(id) {
+  function handleDelete() {
+    var id = openConfirm.value;
     deleteNotification(id, (output) => {
       if (output) {
         setUpdate((prev) => !prev);
