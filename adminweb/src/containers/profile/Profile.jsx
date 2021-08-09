@@ -17,21 +17,13 @@ import * as ALERTMESSAGE from "../../utilities/constants/AlertMessage";
 import * as APIALERTMESSAGE from "../../utilities/constants/APIAlertMessage";
 
 const Profile = () => {
-  const [profileState, setProfile] = useState({
-    profile: null,
-    username: null,
-    position: null,
-    area: null,
-  });
+  const [profileState, setProfile] = useState(null);
 
-  const [filter, setFilter] = useState({ profile: profileState.profile });
-
-  
   const [notification, setNotification] = useState({
     type: "",
     content: "",
   });
-  
+
   const [open, setOpen] = useState(false);
 
   const onClose = () => setOpen(false);
@@ -39,7 +31,8 @@ const Profile = () => {
   const onOpen = () => setOpen(true);
 
   const updateOrigin = (data) => {
-    setFilter({
+    setProfile({
+      ...profileState,
       profile: getHandledEmployeeDataRender(data),
     });
   };
@@ -53,16 +46,14 @@ const Profile = () => {
           setProfile({
             profile: getHandledEmployeeDataRender(output),
             username: output.username,
-            position: output.profile.position
-              ? output.profile.position.name
-              : null,
-            area: output.profile.area ? output.profile.area.name : null,
+            position: output.profile?.position?.name,
+            area: output.profile?.area?.name,
           });
         }
       });
     };
     GetProfileUser();
-  }, [filter]);
+  }, []);
 
   const updateUserProfile = (data) => {
     updateProfile(data, (output) => {
@@ -132,7 +123,7 @@ const Profile = () => {
 
   return (
     <div>
-      {profileState.profile && (
+      {profileState && (
         <div className="pl-24 pr-24">
           <div className="col col-full">
             <div className="col col-third justify-content-ct">

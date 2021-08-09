@@ -1,6 +1,10 @@
-.contract{
-    padding-left:200px;
+.contract {
+  padding-left: 200px;
 }
-.budget-date-picker-calendar{
-    padding-left: 10px;
+.budget-date-picker-calendar {
+  padding-left: 10px;
+}
+.budget-date-picker {
+  padding-right: 7%;
+  margin-top: 15px;
 }

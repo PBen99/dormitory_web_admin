@@ -5,8 +5,12 @@ const initialState = {
   currentRoom: {},
   registrations: {},
   employeeList: [],
+  employees: [],
+  students: [],
+  curStudent: {},
   schedules: {},
   currentRegistration: {},
+  curEmployee: {},
   error: {},
   loading: false,
 };
@@ -14,7 +18,11 @@ const initialState = {
 export default function reducer(state = initialState, actions) {
   switch (actions.type) {
     case types.GET_LIST_REGISTRATION_API:
+    case types.GET_STUDENTS_API:
+    case types.GET_DETAILED_STUDENT_API:
     case types.GET_LIST_EMPLOYEE_API:
+    case types.GET_DETAILED_EMPLOYEE_API:
+    case types.GET_EMPLOYEES_API:
     case types.GET_SCHEDULE_API:
     case types.GET_ROOM_DETAILS_API:
     case types.GET_DETAILED_REGISTRATION_API:
@@ -28,11 +36,35 @@ export default function reducer(state = initialState, actions) {
         loading: true,
         error: {},
       };
+    case types.GET_STUDENTS_API_SUCCEED:
+      return {
+        ...state,
+        loading: false,
+        students: actions.payload,
+      };
+    case types.GET_DETAILED_STUDENT_API_SUCCEED:
+      return {
+        ...state,
+        loading: false,
+        curStudent: actions.payload,
+      };
     case types.GET_SCHEDULE_API_SUCCEED:
       return {
         ...state,
         loading: false,
         schedules: actions.payload,
+      };
+    case types.GET_DETAILED_EMPLOYEE_API_SUCCEED:
+      return {
+        ...state,
+        loading: false,
+        curEmployee: actions.payload,
+      };
+    case types.GET_EMPLOYEES_API_SUCCEED:
+      return {
+        ...state,
+        loading: false,
+        employees: actions.payload,
       };
     case types.GET_LIST_EMPLOYEE_API_SUCCEED:
       return {
@@ -66,8 +98,12 @@ export default function reducer(state = initialState, actions) {
       };
     case types.GET_LIST_REGISTRATION_API_FAIL:
     case types.DELETE_STUDENT_IN_ROOM_API_FAIL:
+    case types.GET_STUDENTS_API_FAIL:
+    case types.GET_DETAILED_STUDENT_API_FAIL:
     case types.DELETE_STUDENT_IN_ROOM_API_SUCCEED:
     case types.GET_LIST_EMPLOYEE_API_FAIL:
+    case types.GET_DETAILED_EMPLOYEE_API_FAIL:
+    case types.GET_EMPLOYEES_API_FAIL:
     case types.GET_SCHEDULE_API_FAIL:
     case types.GET_ROOM_DETAILS_API_FAIL:
     case types.GET_ROOMS_API_FAIL:

@@ -390,40 +390,42 @@ export default function Budget() {
         <div>
           {dataContracts && dataBill && (
             <div className="col col-full pl-48 ">
-              <div className="budget-date-picker" style={{}}>
-                <span style={{ fontSize: "16px" }}>Tháng: </span>
-                <DatePicker
-                  selected={startDate}
-                  onChange={(date) => setStartDate(date)}
-                  dateFormat="MM/yyyy"
-                  className={"budget-date-picker-calendar"}
-                  showMonthYearPicker
-                />
-              </div>
-              <span style={{ display: "flex" }}>
-                <div className="col-full pt-16">
-                  <label className="mr-8" htmlFor="contract">
-                    Hợp đồng
-                  </label>
-                  <input
-                    type="radio"
-                    id="contract"
-                    value="contract"
-                    onChange={handleOptionChange}
-                    checked={selectedOption === "contract"}
-                  />
-                  <label className="ml-16 mr-8" htmlFor="bill">
-                    Hóa đơn
-                  </label>
-                  <input
-                    type="radio"
-                    id="bill"
-                    value="bill"
-                    onChange={handleOptionChange}
-                    checked={selectedOption === "bill"}
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <span style={{ display: "flex", paddingLeft: "5%" }}>
+                  <div className="col-full pt-16">
+                    <label className="mr-8" htmlFor="contract">
+                      Hợp đồng
+                    </label>
+                    <input
+                      type="radio"
+                      id="contract"
+                      value="contract"
+                      onChange={handleOptionChange}
+                      checked={selectedOption === "contract"}
+                    />
+                    <label className="ml-16 mr-8" htmlFor="bill">
+                      Hóa đơn
+                    </label>
+                    <input
+                      type="radio"
+                      id="bill"
+                      value="bill"
+                      onChange={handleOptionChange}
+                      checked={selectedOption === "bill"}
+                    />
+                  </div>
+                </span>
+                <div className="budget-date-picker">
+                  <span style={{ fontSize: "16px" }}>Tháng: </span>
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    dateFormat="MM/yyyy"
+                    className={"budget-date-picker-calendar"}
+                    showMonthYearPicker
                   />
                 </div>
-              </span>
+              </div>
               <div
                 className={"budget-table"}
                 style={{ marginTop: "20px", position: "sticky" }}

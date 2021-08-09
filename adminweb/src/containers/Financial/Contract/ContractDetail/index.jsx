@@ -20,9 +20,9 @@ export default function ContractDetail() {
 
   const loader = useSelector((state) => state.financial.loading);
 
-
   useEffect(() => {
     getDetailedContract(contractId, (output) => {
+      console.log(output);
       if (output) {
         setData(output);
       }

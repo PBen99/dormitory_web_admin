@@ -24,21 +24,21 @@ function getHandledEmployeeDataRender(origin) {
       value: origin.email,
     },
     birthday: {
-      value: moment(new Date(origin.profile.birthday)).format("YYYY-MM-DD"),
+      value: moment(new Date(origin.profile?.birthday)).format("YYYY-MM-DD"),
       title: "Ngày sinh",
       type: "date",
       isValid: true,
       isHidden: true,
     },
     address: {
-      value: origin.profile.address,
+      value: origin.profile?.address,
       title: "Địa chỉ",
       type: "text",
       isValid: true,
       isHidden: true,
     },
     phone: {
-      value: origin.profile.phone,
+      value: origin.profile?.phone,
       title: "Số điện thoại",
       type: "tel",
       validateType: "phone",
@@ -47,7 +47,7 @@ function getHandledEmployeeDataRender(origin) {
       errorMessage: AlertMessage.PHONE_NUMBER_INVALID,
     },
     identification: {
-      value: origin.profile.identify_card,
+      value: origin.profile?.identify_card,
       title: "CMND",
       type: "tel",
       isValid: true,
@@ -57,7 +57,7 @@ function getHandledEmployeeDataRender(origin) {
     },
     gender: {
       title: "Giới tính",
-      value: origin.profile.gender,
+      value: origin.profile?.gender,
       field: {
         [true]: "Nam",
         [false]: "Nữ",

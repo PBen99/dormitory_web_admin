@@ -8,6 +8,16 @@ const ManageUser = (Component) => (props) => {
     <React.Fragment>
       <div className="style-financial-container">
         <div className="col col-full pl-16 pr-16 mb-16">
+        <div className="mr-16" style={{ display: "inline", width: "200px" }}>
+            <NavLink
+              to={`${ROUTER.ROUTE_MANAGE_USER}${ROUTER.ROUTER_STUDENTS}`}
+              style={{ textDecoration: "none" }}
+              activeClassName="style-activeNavSublink"
+              className="style-navSubLink bold-text"
+            >
+              Sinh viên
+            </NavLink>
+          </div>
           <div className="mr-16" style={{ display: "inline", width: "200px" }}>
             <NavLink
               to={`${ROUTER.ROUTE_MANAGE_USER}${ROUTER.ROUTER_ROOMS}`}
@@ -16,6 +26,16 @@ const ManageUser = (Component) => (props) => {
               className="style-navSubLink bold-text"
             >
               Phòng ở
+            </NavLink>
+          </div>
+          <div className="mr-16" style={{ display: "inline", width: "200px" }}>
+            <NavLink
+              to={`${ROUTER.ROUTE_MANAGE_USER}${ROUTER.ROUTER_EMPLOYEES}`}
+              style={{ textDecoration: "none" }}
+              activeClassName="style-activeNavSublink"
+              className="style-navSubLink bold-text"
+            >
+              <span>Nhân viên</span>
             </NavLink>
           </div>
           <div className="mr-16" style={{ display: "inline", width: "200px" }}>

@@ -461,14 +461,17 @@ export async function getDetailedContract(id, resolve = () => {}) {
     type: types.GET_DETAILED_CONTRACT_API,
   });
   try {
-    const response = await fetch(`${REACT_APP_BASE_API}registrations/${id}/`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
+    const response = await fetch(
+      `${REACT_APP_BASE_API}contract-detail/${id}/`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
     const data_1 = await response.json();
     resolve(data_1);
     store.dispatch({
