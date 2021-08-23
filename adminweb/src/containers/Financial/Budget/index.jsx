@@ -27,7 +27,7 @@ export default function Budget() {
           />
         </div>
         <div className="col col-half">
-          <label className="mr-8" htmlFor="coutcome">
+          <label className="mr-8" htmlFor="outcome">
             Chi
           </label>
           <input

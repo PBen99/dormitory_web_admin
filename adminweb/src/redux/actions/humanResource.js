@@ -33,6 +33,60 @@ export async function getStudents(params, resolve = () => {}) {
   }
 }
 
+export async function getStageStatus(resolve = () => {}) {
+  store.dispatch({
+    type: types.GET_STAGE_STATUS_API,
+  });
+  try {
+    const response = await fetch(`${REACT_APP_BASE_API}get-stage/`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+    const data = await response.json();
+    resolve(data);
+    store.dispatch({
+      payload: data,
+      type: types.GET_STAGE_STATUS_API_SUCCEED,
+    });
+  } catch (error) {
+    store.dispatch({
+      payload: error,
+      type: types.GET_STAGE_STATUS_API_FAIL,
+    });
+  }
+}
+
+export async function getSchoolYear(resolve = () => {}) {
+  store.dispatch({
+    type: types.GET_SCHOOL_YEAR_API,
+  });
+  try {
+    const response = await fetch(`${REACT_APP_BASE_API}school-year/`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+    const data = await response.json();
+    resolve(data);
+    store.dispatch({
+      payload: data,
+      type: types.GET_SCHOOL_YEAR_API_SUCCEED,
+    });
+  } catch (error) {
+    store.dispatch({
+      payload: error,
+      type: types.GET_SCHOOL_YEAR_API_FAIL,
+    });
+  }
+}
+
 export async function getDetailedStudent(slug, resolve = () => {}) {
   store.dispatch({
     type: types.GET_DETAILED_STUDENT_API,
@@ -258,6 +312,34 @@ export async function addDailySchedule(data, resolve = () => {}) {
     store.dispatch({
       payload: error,
       type: types.ADD_DAILY_SCHEDULE_API_FAIL,
+    });
+  }
+}
+
+export async function openRegistrationTime(data, resolve = () => {}) {
+  store.dispatch({
+    type: types.OPEN_REGISTRATION_TIME_API,
+  });
+  try {
+    const response = await fetch(`${REACT_APP_BASE_API}start-registration/`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const data_1 = await response.json();
+    resolve(data_1);
+    store.dispatch({
+      payload: data_1,
+      type: types.OPEN_REGISTRATION_TIME_API_SUCCEED,
+    });
+  } catch (error) {
+    store.dispatch({
+      payload: error,
+      type: types.OPEN_REGISTRATION_TIME_API_FAIL,
     });
   }
 }

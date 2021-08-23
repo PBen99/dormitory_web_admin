@@ -11,8 +11,10 @@ const initialState = {
   schedules: {},
   currentRegistration: {},
   curEmployee: {},
+  stageStatus: false,
   error: {},
   loading: false,
+  schoolYear: null,
 };
 
 export default function reducer(state = initialState, actions) {
@@ -30,12 +32,22 @@ export default function reducer(state = initialState, actions) {
     case types.DENY_REGISTRATION_API:
     case types.ADD_DAILY_SCHEDULE_API:
     case types.GET_ROOMS_API:
+    case types.OPEN_REGISTRATION_TIME_API:
+    case types.GET_STAGE_STATUS_API:
+    case types.GET_SCHOOL_YEAR_API:
     case types.DELETE_STUDENT_IN_ROOM_API:
       return {
         ...state,
         loading: true,
         error: {},
       };
+    case types.GET_SCHOOL_YEAR_API_SUCCEED:
+      return {
+        ...state,
+        loading: false,
+        schoolYear: actions.payload,
+      };
+
     case types.GET_STUDENTS_API_SUCCEED:
       return {
         ...state,
@@ -96,6 +108,9 @@ export default function reducer(state = initialState, actions) {
         currentRoom: actions.payload,
         loading: false,
       };
+
+    case types.GET_STAGE_STATUS_API_SUCCEED:
+      return { ...state, currentRoom: actions.payload, loading: false };
     case types.GET_LIST_REGISTRATION_API_FAIL:
     case types.DELETE_STUDENT_IN_ROOM_API_FAIL:
     case types.GET_STUDENTS_API_FAIL:
@@ -114,6 +129,8 @@ export default function reducer(state = initialState, actions) {
     case types.ACCEPT_REGISTRATION_API_SUCCEED:
     case types.ADD_DAILY_SCHEDULE_API_FAIL:
     case types.ADD_DAILY_SCHEDULE_API_SUCCEED:
+    case types.OPEN_REGISTRATION_TIME_API_SUCCEED:
+    case types.OPEN_REGISTRATION_TIME_API_FAIL:
       return {
         ...state,
         error: actions.payload,

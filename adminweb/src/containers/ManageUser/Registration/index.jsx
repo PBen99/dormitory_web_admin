@@ -9,20 +9,23 @@ import {
   AcceptRegistrationRoom,
   DenyRegistrationRoom,
   GetListRegistrationRoom,
+  getStageStatus,
+  getSchoolYear,
 } from "../../../redux/actions/humanResource";
 import moment from "moment";
 import * as APIAlertMessage from "../../../utilities/constants/APIAlertMessage";
 import * as AlertMessage from "../../../utilities/constants/AlertMessage";
 import Alertness from "../../../components/common/Alertness";
 import Popup from "reactjs-popup";
+import OpenRegistration from "./OpenRegistration/index";
 
 const Registration = () => {
   const [registrationData, setRegistration] = useState([]);
-
+  const [school_year, setSchoolYear] = useState([]);
   const [openAlert, setOpenAlert] = useState(false);
-
+  const [openRegistration, setOpenRegistration] = useState(false);
+  const [stageStatus, setStageStatus] = useState();
   const [action, setAction] = useState();
-
   const [notification, setNotification] = useState({
     type: "",
     content: "",
@@ -31,7 +34,10 @@ const Registration = () => {
   const loader = useSelector((state) => state.humanResource.loading);
 
   const onCloseAlert = () => setOpenAlert(false);
-
+  const onCloseRegistrationPopup = () => {
+    setOpenRegistration(false);
+  };
+  const onOpenRegistrationTime = () => setOpenRegistration(true);
   const onOpenAlert = () => setOpenAlert(true);
 
   const [openSubmission, setOpenSubmission] = useState(false);
@@ -56,14 +62,28 @@ const Registration = () => {
         setRegistration(data);
       }
     });
-  }, [openAlert]);
+    getStageStatus((output) => {
+      setStageStatus(output);
+    });
+    getSchoolYear((output) => {
+      setSchoolYear(output);
+    });
+  }, [openAlert, openRegistration]);
+  // useEffect(() => {
+  //   getStageStatus((output) => {
+  //     setStageStatus(output.stage_is_open);
+  //   });
+  //   getSchoolYear((output) => {
+  //     setSchoolYear(output);
+  //   });
+  // }, [openRegistration]);
 
   const columnsNoti = [
     {
       name: "order",
       label: "Thứ tự",
       options: {
-        filter: true,
+        filter: false,
         sort: true,
       },
     },
@@ -71,7 +91,7 @@ const Registration = () => {
       name: "request",
       label: "Email người gửi",
       options: {
-        filter: true,
+        filter: false,
         sort: true,
       },
     },
@@ -95,7 +115,7 @@ const Registration = () => {
       name: "address",
       label: "Địa chỉ",
       options: {
-        filter: true,
+        filter: false,
         sort: true,
       },
     },
@@ -103,7 +123,7 @@ const Registration = () => {
       name: "createdDate",
       label: "Ngày gửi yêu cầu",
       options: {
-        filter: true,
+        filter: false,
         sort: true,
       },
     },
@@ -111,6 +131,8 @@ const Registration = () => {
       name: "",
       label: "",
       options: {
+        filter: false,
+
         customBodyRender: () => {
           return (
             <Button variant="contained" color="primary">
@@ -124,6 +146,8 @@ const Registration = () => {
       name: "ACTION",
       label: "Accept",
       options: {
+        filter: false,
+
         customBodyRender: (value, tableMetaData) => {
           return (
             <Button
@@ -146,6 +170,7 @@ const Registration = () => {
       name: "ACTION",
       label: "",
       options: {
+        filter: false,
         customBodyRender: (value, tableMetaData) => {
           return (
             <Button
@@ -240,8 +265,7 @@ const Registration = () => {
   };
 
   const options = {
-    filterType: "textField",
-
+    filterType: "select",
     pagination: false,
     selectableRows: "none",
     customHeadRender: () => {
@@ -260,6 +284,11 @@ const Registration = () => {
             width: "1200px",
           },
         },
+        MUIDataTableFilter: {
+          root: {
+            width: "300px",
+          },
+        },
         MUIDataTableBodyCell: {
           root: {
             backgroundColor: "#FFF",
@@ -267,7 +296,7 @@ const Registration = () => {
         },
       },
     });
-
+  console.log("Stage status", stageStatus);
   return (
     <div className="col col-full">
       {loader ? (
@@ -278,6 +307,29 @@ const Registration = () => {
         <div>
           {registrationData && (
             <div className="col col-full pt-16" style={{ zIndex: "1" }}>
+              <div
+                style={{
+                  margin: "0 0 10px 7%",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <StyledButton
+                  type="normal-blue"
+                  content="Tạo"
+                  isDisable={stageStatus?.stage_is_open}
+                  onClick={onOpenRegistrationTime}
+                />
+                {stageStatus?.stage_is_open && (
+                  <label
+                    style={{
+                      margin: "1% 10% 0 0",
+                      fontSize: "24px",
+                      color: "red",
+                    }}
+                  >{`Đang ở trong giai đoạn ${stageStatus.stage}`}</label>
+                )}
+              </div>
               <MuiThemeProvider theme={getMuiTheme()}>
                 <MUIDataTable
                   className="mg-auto"
@@ -331,6 +383,13 @@ const Registration = () => {
                 </div>
               </div>
             </Popup>
+          </div>
+          <div>
+            <OpenRegistration
+              open={openRegistration}
+              onClose={onCloseRegistrationPopup}
+              school_year={school_year}
+            />
           </div>
         </div>
       )}
